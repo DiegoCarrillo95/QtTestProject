@@ -21,7 +21,7 @@ public slots:
 
 private:
     Command *m_createClientSaveCommand;
-    QList<Command*> createClientViewContextCommands{};
+    QList<Command*> m_createClientViewContextCommands{};
 };
 
 #endif // COMMANDCONTROLLER_H

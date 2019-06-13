@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <controllers/mastercontroller.h>
+#include <controllers/commandcontroller.h>
 
 int main(int argc, char *argv[])
 {
@@ -11,6 +12,8 @@ int main(int argc, char *argv[])
 
     qmlRegisterType<MasterController>("CM", 1, 0,"MasterController");
     qmlRegisterType<NavigationController>("CM", 1, 0,"NavigationController");
+    qmlRegisterType<CommandController>("CM", 1, 0, "CommandController");
+    qmlRegisterType<Command>("CM", 1, 0, "Command");
 
     MasterController masterController;
     QQmlApplicationEngine engine;

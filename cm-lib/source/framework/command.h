@@ -3,7 +3,6 @@
 
 #include <functional>
 #include <QObject>
-#include <QScopedPointer>
 #include <QString>
 
 class Command : public QObject
@@ -15,14 +14,15 @@ class Command : public QObject
 
 public:
     Command(QObject* parent = nullptr,
-                         const QString& iconCharacter = "",
-                         const QString& description = "",
-                         std::function<bool()> canExecute = [](){ return true;});
+            const QString iconCharacter = "",
+            const QString description = "",
+            std::function<bool()> canExecute = [](){return true;});
+
     ~Command();
 
     QString iconCharacter() const;
     QString description() const;
-    std::function<bool ()> canExecute() const;
+    bool canExecute() const;
 
 signals:
     void canExecuteChanged();
